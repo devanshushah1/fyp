@@ -1,0 +1,76 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+{% block title %} Get Started {% endblock title %}
+
+<!-- Specific CSS goes HERE -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+    <!-- Header -->
+    <div class="header bg-gradient-primary pb-5 pt-5 pt-md-8">
+    </div>
+
+    <div class="container-fluid mt--7">
+
+      <div class="row">
+        <div class="col">
+          <div class="card shadow">
+            <div class="card-header bg-transparent">
+              <h3 class="mb-0">Get Started</h3>
+            </div>
+            <div class="card-body">
+              <div class="row icon-examples">
+                <div class="col-lg-3 col-md-6">
+                  <a href="{% url 'main:get-hashtags' %}">
+                  <button type="button" class="btn-icon-clipboard" data-clipboard-text="active-40" title="Get User Attributes">
+                    <div>
+                      <i class="ni ni-active-40"></i>
+                      <span>Hashtag Recommendations</span>
+                    </div>
+                  </button></a>
+                </div>
+                <!-- <div class="col-lg-3 col-md-6">
+                  <a href="{% url 'main:analytics-by-topic' %}">
+                  <button type="button" class="btn-icon-clipboard" data-clipboard-text="air-baloon" title="Get Sentiment Analysis">
+                    <div>
+                      <i class="ni ni-air-baloon"></i>
+                      <span>Topic Analysis</span>
+                    </div>
+                  </button></a>
+                </div> -->
+                <div class="col-lg-3 col-md-6">
+                  <a href="{% url 'main:user-comp' %}">
+                  <button type="button" class="btn-icon-clipboard" data-clipboard-text="album-2" title="Get Competetive Analysis">
+                    <div>
+                      <i class="ni ni-album-2"></i>
+                      <span>Compare Profiles</span>
+                    </div>
+                  </button></a>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                  <a href="{% url 'main:logout-view' %}">
+                  <button type="button" class="btn-icon-clipboard" data-clipboard-text="align-center" title="">
+                    <div>
+                      <i class="ni ni-align-center"></i>
+                      <span>Logout</span>
+                    </div>
+                  </button>
+                </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {% include "includes/footer.html" %}
+
+    </div>
+
+{% endblock content %}
+
+<!-- Specific JS goes HERE --> 
+{% block javascripts %}
+
+{% endblock javascripts %}

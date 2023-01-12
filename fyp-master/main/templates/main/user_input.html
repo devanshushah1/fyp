@@ -1,0 +1,94 @@
+{% extends 'layouts/base.html' %}
+
+{% block title %} Dashboard {% endblock title %}
+
+<!-- Specific CSS goes HERE -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+    <!-- Header -->
+    <div class="header bg-primary pb-6">
+      <div class="container-fluid">
+        <div class="header-body">
+          <div class="row align-items-center py-4">
+            <div class="col-lg-6 col-7">
+              <h6 class="h2 text-white d-inline-block mb-0">Topic Analysis</h6>
+              <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
+                <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
+                  <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
+                  <li class="breadcrumb-item"><a href="/">Home</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">Topic Analysis</li>
+                </ol>
+              </nav>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Page content -->
+    <div class="container-fluid mt--6">
+      <div class="row">
+        <div class="col-xl-8">
+          <div class="card bg-default">
+            <div class="card-header bg-transparent">
+              <div class="row align-items-center">
+                <div class="col-lg-6 col-7">
+                    <h6 class="h2 text-white d-inline-block mb-0">Competetive Analysis</h6>
+                  </div>
+              </div>
+            </div>
+            <div class="card-body">
+              <!-- Chart -->
+              <form  method="POST" id="myform">
+                {% csrf_token %}
+                <label for="fname" style="color: white;">Enter uids (comma seperated):</label><br>
+                <input type="text" id="uid" name="uid">
+                <input type="submit" value="Submit"><br><br>
+            </form>
+              
+            </div>
+         
+          </div>
+          
+        </div>
+        <div class="col-xl-4">
+          <div class="card">
+            <div class="card-header bg-transparent">
+              <div class="row align-items-center">
+                <div class="col">
+                  <h6 class="text-uppercase text-muted ls-1 mb-1">What is </h6>
+                  <h5 class="h3 mb-0">Competetive Analysis?</h5>
+                </div>
+              </div>
+            </div>
+            <div class="card-body">
+              <!-- Chart -->
+              Twitter can give you detailed insights on both your competitors and audience but brand owners are often clueless about how to use this platform effectively. Twitter competitor analysis is now gaining momentum because of the increasing number of users and brands on the platform.
+            </div>
+          </div>
+        </div>
+      </div>
+      {% include "includes/footer.html" %}
+
+    </div>
+
+{% endblock content %}
+
+<!-- Specific JS goes HERE --> 
+{% block javascripts %}
+
+  <script src="/static/assets/vendor/chart.js/dist/Chart.min.js"></script>
+  <script src="/static/assets/vendor/chart.js/dist/Chart.extension.js"></script>
+
+{% endblock javascripts %}
+
+
+
+
+
+
+
+
